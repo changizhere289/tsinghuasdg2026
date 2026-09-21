@@ -1,369 +1,246 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Báo Cáo Phân Tích Dữ Liệu Chuyển Đổi Xanh - Chung Cư Ngô Gia Tự</title>
-  <!-- Google Fonts & FontAwesome Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <style>
-    :root {
-      --primary-color: #0d9488;
-      --primary-dark: #0f766e;
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
-      --text-main: #1e293b;
-      --text-sub: #64748b;
-      --border-color: #e2e8f0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsinghua Global SDG Case Competition - Ngo Gia Tu Complex Analysis</title>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <style>
+        :root {
+            --tsinghua-purple: #660099;
+            --tsinghua-light-purple: #f3e8fa;
+            --tsinghua-dark: #3b0059;
+            --accent-color: #8e24aa;
+            --bg-light: #f8f9fa;
+            --text-dark: #212529;
+            --text-muted: #6c757d;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding-bottom: 50px;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
-      color: white;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
 
-    header h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
+        /* Header Banner */
+        header {
+            background: linear-gradient(135deg, var(--tsinghua-dark), var(--tsinghua-purple));
+            color: #ffffff;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
 
-    header p {
-      font-size: 1rem;
-      opacity: 0.9;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+        .competition-tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
 
-    /* Layout Container */
-    .container {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            max-width: 1100px;
+            margin: 0 auto 0.8rem;
+            line-height: 1.3;
+        }
 
-    /* KPI Summary Cards */
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
+        header h2 {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-    .kpi-card {
-      background: var(--card-bg);
-      padding: 1.25rem;
-      border-radius: 12px;
-      border: 1px solid var(--border-color);
-      text-align: center;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
+        /* Container Layout */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
 
-    .kpi-card i {
-      font-size: 1.8rem;
-      color: var(--primary-color);
-      margin-bottom: 0.5rem;
-    }
+        /* Layer Sections */
+        .layer-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--tsinghua-purple);
+        }
 
-    .kpi-card h3 {
-      font-size: 1.5rem;
-      color: var(--text-main);
-    }
+        .layer-header {
+            border-bottom: 2px solid var(--tsinghua-light-purple);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
 
-    .kpi-card p {
-      font-size: 0.875rem;
-      color: var(--text-sub);
-    }
+        .layer-title {
+            font-size: 1.5rem;
+            color: var(--tsinghua-purple);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
 
-    /* Navigation Tabs */
-    .nav-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      background: #e2e8f0;
-      padding: 0.5rem;
-      border-radius: 10px;
-    }
+        .layer-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
 
-    .tab-btn {
-      flex: 1;
-      min-width: 160px;
-      padding: 0.75rem 1rem;
-      border: none;
-      background: transparent;
-      color: var(--text-sub);
-      font-weight: 600;
-      font-size: 0.9rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
+        /* Visualisation Grid / Wrapper */
+        .viz-block {
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
 
-    .tab-btn.active {
-      background: var(--card-bg);
-      color: var(--primary-dark);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-    }
+        .viz-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--tsinghua-dark);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-    .tab-btn:hover:not(.active) {
-      background: rgba(255,255,255,0.5);
-      color: var(--text-main);
-    }
+        .flourish-embed {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 0.5rem;
+            border: 1px solid #e9ecef;
+        }
 
-    /* Section & Chart Cards */
-    .chart-section {
-      display: none;
-      background: var(--card-bg);
-      border-radius: 16px;
-      border: 1px solid var(--border-color);
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-      animation: fadeIn 0.4s ease-in-out;
-    }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--tsinghua-dark);
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
 
-    .chart-section.active {
-      display: block;
-    }
+        footer a {
+            color: #d8b4fe;
+            text-decoration: none;
+        }
 
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 2px solid var(--border-color);
-    }
-
-    .section-title {
-      font-size: 1.25rem;
-      color: var(--primary-dark);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .section-desc {
-      font-size: 0.9rem;
-      color: var(--text-sub);
-      margin-bottom: 1.5rem;
-    }
-
-    .fullscreen-btn {
-      background: #f1f5f9;
-      border: 1px solid var(--border-color);
-      padding: 0.5rem 0.75rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.85rem;
-      color: var(--text-sub);
-      transition: background 0.2s;
-    }
-
-    .fullscreen-btn:hover {
-      background: #e2e8f0;
-      color: var(--text-main);
-    }
-
-    /* Responsive Flourish Wrapper */
-    .flourish-container {
-      width: 100%;
-      min-height: 550px;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      color: var(--text-sub);
-      font-size: 0.85rem;
-    }
-  </style>
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.4rem;
+            }
+            header h2 {
+                font-size: 0.95rem;
+            }
+            .layer-card {
+                padding: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Hệ Thống Phân Tích Dữ Liệu Trực Quan</h1>
-    <p>Nghiên cứu Giải pháp Chuyển đổi Xanh & Hạ tầng Sạc Xe Điện tại Chung Cư Ngô Gia Tự</p>
-  </header>
+    <!-- Header Section -->
+    <header>
+        <span class="competition-tag"><i class="fa-solid fa-graduation-cap"></i> Tsinghua Global SDG Case Competition</span>
+        <h1>THE DIRECT-CHARGING PARADOX IN NGO GIA TU APARTMENT COMPLEX</h1>
+        <h2>A Multi-Stakeholder SIFC Analysis of EB Adoption and Fire Safety Governance in Ho Chi Minh City Ageing Residential Communities</h2>
+    </header>
 
-  <div class="container">
+    <!-- Main Content Container -->
+    <div class="container">
 
-    <!-- KPI Summary -->
-    <div class="kpi-grid">
-      <div class="kpi-card">
-        <i class="fa-solid fa-users"></i>
-        <h3>Stakeholders</h3>
-        <p>Thống kê đối tượng nghiên cứu</p>
-      </div>
-      <div class="kpi-card">
-        <i class="fa-solid fa-chart-pie"></i>
-        <h3>Behavioral</h3>
-        <p>Yếu tố tác động hành vi</p>
-      </div>
-      <div class="kpi-card">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <h3>Evidence</h3>
-        <p>Dữ liệu bằng chứng mã hóa</p>
-      </div>
-      <div class="kpi-card">
-        <i class="fa-solid fa-diagram-project"></i>
-        <h3>Network</h3>
-        <p>Mạng lưới Insight Sơ cấp</p>
-      </div>
+        <!-- LAYER 1 -->
+        <section class="layer-card">
+            <div class="layer-header">
+                <h3 class="layer-title"><i class="fa-solid fa-chart-pie"></i> Layer 1: Key Categorized Data Points</h3>
+                <p class="layer-subtitle">Statistical breakdown of stakeholders and coded evidence using Sunburst visualization.</p>
+            </div>
+            
+            <div class="viz-block">
+                <div class="viz-title"><i class="fa-solid fa-circle-nodes"></i> Stakeholders vs. Coded Evidence Hierarchy</div>
+                <!-- Sunburst Placeholder / Embed if available -->
+                <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1rem;">
+                    [Layer 1 Sunburst Chart Overview]
+                </p>
+            </div>
+        </section>
+
+        <!-- LAYER 2 -->
+        <section class="layer-card">
+            <div class="layer-header">
+                <h3 class="layer-title"><i class="fa-solid fa-diagram-project"></i> Layer 2: Cross-Stakeholder Mapping & Primary Insights</h3>
+                <p class="layer-subtitle">Comprehensive analytical mapping across behavioral determinants, evidence distribution, and stakeholder networks.</p>
+            </div>
+
+            <!-- Visualization 1 -->
+            <div class="viz-block">
+                <div class="viz-title"><i class="fa-solid fa-sitemap"></i> Mapping Coded Evidence to Behavioral Determinants (Part 1)</div>
+                <div class="flourish-embed flourish-hierarchy" data-src="visualisation/30308187">
+                    <script src="https://public.flourish.studio/resources/embed.js"></script>
+                    <noscript><img src="https://public.flourish.studio/visualisation/30308187/thumbnail" width="100%" alt="hierarchy visualization" /></noscript>
+                </div>
+            </div>
+
+            <!-- Visualization 2 -->
+            <div class="viz-block">
+                <div class="viz-title"><i class="fa-solid fa-sitemap"></i> Mapping Coded Evidence to Behavioral Determinants (Part 2)</div>
+                <div class="flourish-embed flourish-hierarchy" data-src="visualisation/30306998">
+                    <script src="https://public.flourish.studio/resources/embed.js"></script>
+                    <noscript><img src="https://public.flourish.studio/visualisation/30306998/thumbnail" width="100%" alt="hierarchy visualization" /></noscript>
+                </div>
+            </div>
+
+            <!-- Visualization 3 -->
+            <div class="viz-block">
+                <div class="viz-title"><i class="fa-solid fa-chart-bar"></i> Distribution of Coded Evidence Across Stakeholders and Behavioural Determinants</div>
+                <div class="flourish-embed flourish-hierarchy" data-src="visualisation/30312924">
+                    <script src="https://public.flourish.studio/resources/embed.js"></script>
+                    <noscript><img src="https://public.flourish.studio/visualisation/30312924/thumbnail" width="100%" alt="hierarchy visualization" /></noscript>
+                </div>
+            </div>
+
+            <!-- Visualization 4 -->
+            <div class="viz-block">
+                <div class="viz-title"><i class="fa-solid fa-network-wired"></i> Stakeholder Network & Coded Evidence Analysis</div>
+                <div class="flourish-embed flourish-network" data-src="visualisation/30307142">
+                    <script src="https://public.flourish.studio/resources/embed.js"></script>
+                    <noscript><img src="https://public.flourish.studio/visualisation/30307142/thumbnail" width="100%" alt="network visualization" /></noscript>
+                </div>
+            </div>
+
+        </section>
+
     </div>
 
-    <!-- Navigation Tabs -->
-    <div class="nav-tabs">
-      <button class="tab-btn active" onclick="switchTab('tab1')">
-        <i class="fa-solid fa-user-group"></i> 1. Stakeholder Map
-      </button>
-      <button class="tab-btn" onclick="switchTab('tab2')">
-        <i class="fa-solid fa-sliders"></i> 2. Strategic Framework
-      </button>
-      <button class="tab-btn" onclick="switchTab('tab3')">
-        <i class="fa-solid fa-database"></i> 3. Coded Evidence
-      </button>
-      <button class="tab-btn" onclick="switchTab('tab4')">
-        <i class="fa-solid fa-network-wired"></i> 4. Insight Network
-      </button>
-    </div>
-
-    <!-- Chart 1: Stakeholders Sunburst -->
-    <div id="tab1" class="chart-section active">
-      <div class="section-header">
-        <h2 class="section-title"><i class="fa-solid fa-circle-nodes"></i> Biểu đồ Sunburst: Cơ cấu & Thống kê Tương tác Stakeholder</h2>
-        <button class="fullscreen-btn" onclick="toggleFullscreen('tab1')"><i class="fa-solid fa-expand"></i> Phóng to</button>
-      </div>
-      <p class="section-desc">Trực quan hóa tỷ trọng và phân cấp các nhóm đối tượng liên quan (Cư dân, Chủ bãi xe, Chính quyền, Đơn vị cung cấp giải pháp) tham gia vào hệ sinh thái.</p>
-      <div class="flourish-container">
-        <div class="flourish-embed flourish-hierarchy" data-src="visualisation/30306768">
-          <script src="https://public.flourish.studio/resources/embed.js"></script>
-          <noscript><img src="https://public.flourish.studio/visualisation/30306768/thumbnail" width="100%" alt="hierarchy visualization" /></noscript>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chart 2: Analytical Axis & Behavioral Determinants Sunburst -->
-    <div id="tab2" class="chart-section">
-      <div class="section-header">
-        <h2 class="section-title"><i class="fa-solid fa-chart-line"></i> Biểu đồ Sunburst: Trục Phân Tích & Yếu Tố Định Hướng Hành Vi</h2>
-        <button class="fullscreen-btn" onclick="toggleFullscreen('tab2')"><i class="fa-solid fa-expand"></i> Phóng to</button>
-      </div>
-      <p class="section-desc">Phân tích mối quan hệ giữa các Trục Phân Tích (Analytical Axis) và các Yếu tố Định hướng Hành vi (Behavioral Determinants) của người dân.</p>
-      <div class="flourish-container">
-        <div class="flourish-embed flourish-hierarchy" data-src="visualisation/30306998">
-          <script src="https://public.flourish.studio/resources/embed.js"></script>
-          <noscript><img src="https://public.flourish.studio/visualisation/30306998/thumbnail" width="100%" alt="hierarchy visualization" /></noscript>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chart 3: Coded Evidence vs Behavioral Determinants Sunburst -->
-    <div id="tab3" class="chart-section">
-      <div class="section-header">
-        <h2 class="section-title"><i class="fa-solid fa-folder-tree"></i> Biểu đồ Sunburst: Dữ Liệu Bằng Chứng (Coded Evidence) Theo Yếu Tố Hành Vi</h2>
-        <button class="fullscreen-btn" onclick="toggleFullscreen('tab3')"><i class="fa-solid fa-expand"></i> Phóng to</button>
-      </div>
-      <p class="section-desc">Mapping trực tiếp các minh chứng thực tế (Coded Evidence) từ khảo sát định tính vào các nhánh yếu tố tâm lý, hạ tầng và pháp lý.</p>
-      <div class="flourish-container">
-        <div class="flourish-embed flourish-hierarchy" data-src="visualisation/30308187">
-          <script src="https://public.flourish.studio/resources/embed.js"></script>
-          <noscript><img src="https://public.flourish.studio/visualisation/30308187/thumbnail" width="100%" alt="hierarchy visualization" /></noscript>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chart 4: Network Graph of Primary Insights -->
-    <div id="tab4" class="chart-section">
-      <div class="section-header">
-        <h2 class="section-title"><i class="fa-solid fa-circle-dot"></i> Mô Hình Mạng Lưới Liên Kết: Các Insight Sơ Cấp (Primary Insights Network)</h2>
-        <button class="fullscreen-btn" onclick="toggleFullscreen('tab4')"><i class="fa-solid fa-expand"></i> Phóng to</button>
-      </div>
-      <p class="section-desc">Sơ đồ mạng lưới thể hiện sự tương quan, tác động qua lại và các điểm nghẽn giữa 25 Insight sơ cấp đã thu thập được.</p>
-      <div class="flourish-container">
-        <div class="flourish-embed flourish-network" data-src="visualisation/30307142">
-          <script src="https://public.flourish.studio/resources/embed.js"></script>
-          <noscript><img src="https://public.flourish.studio/visualisation/30307142/thumbnail" width="100%" alt="network visualization" /></noscript>
-        </div>
-      </div>
-    </div>
-
+    <!-- Footer -->
     <footer>
-      <p>© 2026 Nhóm Nghiên Cứu Chuyển Đổi Xanh. Tất cả dữ liệu được bảo lưu.</p>
+        <p>&copy; 2026 Tsinghua Global SDG Case Competition. All rights reserved.</p>
+        <p>Research Team Project: Ngo Gia Tu Apartment Complex Green Mobility Study</p>
     </footer>
 
-  </div>
-
-  <!-- JavaScript Tương tác Tab & Phóng to -->
-  <script>
-    function switchTab(tabId) {
-      // Ẩn toàn bộ sections
-      document.querySelectorAll('.chart-section').forEach(section => {
-        section.classList.remove('active');
-      });
-
-      // Bỏ active của toàn bộ nút tab
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-
-      // Hiển thị tab được chọn
-      document.getElementById(tabId).classList.add('active');
-
-      // Thêm active cho nút được bấm
-      event.currentTarget.classList.add('active');
-
-      // Trigger resize để Flourish render lại mượt hơn
-      window.dispatchEvent(new Event('resize'));
-    }
-
-    function toggleFullscreen(elementId) {
-      const elem = document.getElementById(elementId);
-      if (!document.fullscreenElement) {
-        if (elem.requestFullscreen) {
-          elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) { /* Safari */
-          elem.webkitRequestFullscreen();
-        }
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-      }
-    }
-  </script>
 </body>
 </html>
